@@ -1,0 +1,21 @@
+---
+const services = [
+  { title: "Toxina botulínica (Botox)", desc: "Suaviza líneas de expresión en frente, entrecejo y patas de gallo."},
+  { title: "Rellenos dérmicos", desc: "Volumen y contorno en labios, pómulos y mentón."},
+  { title: "Láser depilación", desc: "Depilación definitiva con equipos de grado médico."},
+  { title: "Limpieza y faciales", desc: "Limpieza profunda, hidratación y glow inmediato."},
+  { title: "Peelings químicos", desc: "Mejora textura, manchas y brillo de la piel."},
+  { title: "Radiofrecuencia", desc: "Tensado cutáneo no invasivo para rostro y cuerpo."},
+];
+---
+<section class="py-12">
+  <h2 class="text-2xl font-semibold mb-6">Nuestros servicios</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    {services.map(s => (
+      <div class="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <h3 class="font-semibold text-lg text-gray-900">{s.title}</h3>
+        <p class="text-gray-600 mt-2">{s.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>

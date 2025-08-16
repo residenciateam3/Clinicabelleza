@@ -1,0 +1,30 @@
+---
+const links = [
+  { href: '/', label: 'Inicio' },
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/servicios', label: 'Servicios' },
+  { href: '/precios', label: 'Precios' },
+  { href: '/contacto', label: 'Contacto' },
+];
+---
+<header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="font-bold text-lg text-accent">Clínica Bella</a>
+    <nav class="hidden md:flex items-center gap-6">
+      {links.map(({href, label}) => (
+        <a href={href} class="text-gray-700 hover:text-accent transition">{label}</a>
+      ))}
+    </nav>
+    <a href="/contacto" class="hidden md:inline-block bg-accent text-white px-4 py-2 rounded-lg shadow hover:opacity-90 transition">Agendar</a>
+    <!-- Mobile -->
+    <details class="md:hidden">
+      <summary class="cursor-pointer list-none px-3 py-2 border rounded-lg">Menu</summary>
+      <div class="mt-2 flex flex-col gap-2 bg-white p-3 border rounded-lg shadow">
+        {links.map(({href, label}) => (
+          <a href={href} class="py-1">{label}</a>
+        ))}
+        <a href="/contacto" class="bg-accent text-white px-3 py-2 rounded-lg text-center">Agendar</a>
+      </div>
+    </details>
+  </div>
+</header>

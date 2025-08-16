@@ -1,0 +1,16 @@
+---
+import heroImg from "../assets/hero.webp";
+---
+<section class="grid md:grid-cols-2 gap-8 items-center">
+  <div>
+    <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Tu Belleza, Nuestra Pasión</h1>
+    <p class="mt-4 text-lg text-gray-600">Tratamientos médicos-estéticos con resultados reales, tecnología de última generación y atención personalizada.</p>
+    <div class="mt-6 flex gap-4">
+      <a href="/servicios" class="bg-accent text-white px-5 py-3 rounded-lg shadow hover:opacity-90">Ver servicios</a>
+      <a href="/contacto" class="border border-accent text-accent px-5 py-3 rounded-lg hover:bg-accent/10">Agendar cita</a>
+    </div>
+  </div>
+  <div class="relative">
+    <img src={heroImg.src} alt="Clínica de belleza - tratamiento" />
+  </div>
+</section>

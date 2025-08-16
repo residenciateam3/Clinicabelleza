@@ -1,0 +1,23 @@
+---
+const phone = import.meta.env.PUBLIC_WHATSAPP_PHONE || "520000000000";
+const defaultMsg = import.meta.env.PUBLIC_WA_MESSAGE_DEFAULT || "Hola%20quiero%20agendar%20una%20cita";
+const waUrl = `https://wa.me/${phone}?text=${defaultMsg}`;
+const lat = import.meta.env.PUBLIC_CLINIC_LAT || "20.967370";
+const lng = import.meta.env.PUBLIC_CLINIC_LNG || "-89.592586";
+const mapsUrl = `https://www.google.com/maps?q=${lat},${lng}`;
+---
+<section class="py-12 grid md:grid-cols-2 gap-8 items-start">
+  <div class="bg-white border rounded-2xl p-6 shadow-sm">
+    <h2 class="text-2xl font-semibold">Contáctanos</h2>
+    <p class="text-gray-600 mt-2">Escríbenos por WhatsApp o visítanos en la clínica.</p>
+    <a href={waUrl} target="_blank" class="mt-4 inline-block bg-accent text-white px-5 py-3 rounded-lg">Enviar WhatsApp</a>
+    <div class="mt-6">
+      <p><strong>Tel:</strong> (963) 167 2029</p>
+      <p><strong>Email:</strong> contacto@clinicabella.com</p>
+      <p><strong>Horario:</strong> Lun–Sáb 10:00–19:00</p>
+    </div>
+  </div>
+  <a href={mapsUrl} target="_blank" class="block">
+    <img src="/images/map-3x1.webp" width="1200" height="400" alt="Mapa a la clínica" class="rounded-2xl border w-full h-auto" loading="lazy" decoding="async" />
+  </a>
+</section>

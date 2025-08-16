@@ -1,0 +1,22 @@
+---
+const tiers = [
+  { name: "Básico", price: "MXN $890", features: ["Limpieza facial profunda", "Evaluación de piel", "Rutina básica personalizada"] },
+  { name: "Intermedio", price: "MXN $1,690", features: ["Facial hidratante avanzado", "Máscara LED", "Descuento 5% en productos"] },
+  { name: "Plus", price: "MXN $3,290", features: ["Peeling + Hidratación", "Consulta médica estética", "10% en rellenos/bótox"] },
+];
+---
+<section class="py-12">
+  <h2 class="text-2xl font-semibold mb-6">Paquetes y precios</h2>
+  <div class="grid md:grid-cols-3 gap-6">
+    {tiers.map(t => (
+      <div class="bg-white border rounded-xl p-6 shadow-sm hover:shadow-md transition">
+        <h3 class="text-xl font-semibold text-gray-900">{t.name}</h3>
+        <p class="text-3xl font-bold text-accent mt-2">{t.price}</p>
+        <ul class="mt-4 space-y-2">
+          {t.features.map(f => (<li class="text-gray-600">• {f}</li>))}
+        </ul>
+        <a href="/contacto" class="mt-6 inline-block bg-accent text-white px-4 py-2 rounded-lg">Elegir</a>
+      </div>
+    ))}
+  </div>
+</section>

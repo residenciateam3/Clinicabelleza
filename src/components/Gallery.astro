@@ -1,0 +1,11 @@
+---
+const images = Array.from({length:10}, (_,i)=> `/images/gallery/img-${i+1}.webp`);
+---
+<section class="py-12">
+  <h2 class="text-2xl font-semibold mb-6">RESULTADOS REALES</h2>
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+    {images.map((src, idx) => (
+      <img src={src} alt={`Galería ${idx+1}`} loading="lazy" decoding="async" class="w-full h-auto rounded-lg" width="216" height="216" />
+    ))}
+  </div>
+</section>

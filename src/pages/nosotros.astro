@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+<MainLayout title="Nosotros – Clínica Bella">
+  <section class="prose max-w-none">
+    <h1>Quiénes somos</h1>
+    <p>Somos un equipo de profesionales de la salud y la estética con más de 10 años de experiencia. Nuestra misión es brindar resultados naturales y seguros, priorizando tu bienestar.</p>
+    <h2>Misión</h2>
+    <p>Elevar la confianza de cada paciente con tratamientos efectivos y éticos.</p>
+    <h2>Visión</h2>
+    <p>Ser la clínica de referencia en medicina estética de la región por calidad, innovación y calidez humana.</p>
+    <h2>Nuestro equipo</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      {[1,2,3].map(i => (
+        <div class="text-center">
+          <img src={`/images/team-${i}.webp`} alt={`Integrante ${i}`} width="300" height="300" class="rounded-2xl w-full h-auto" loading="lazy" />
+          <p class="mt-2 font-semibold">Especialista {i}</p>
+          <p class="text-gray-600 text-sm">Médico(a) estético(a)</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

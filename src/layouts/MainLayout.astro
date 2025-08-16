@@ -1,0 +1,33 @@
+---
+import "../styles/tailwind.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+const { title = "Clínica de Belleza", description = "Tratamientos estéticos de alta calidad" } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --font-primary: 'Poppins', sans-serif;
+  }
+  body {
+    font-family: var(--font-primary);
+  }
+</style>
+    <link rel="icon" href="/favicon.svg" />
+  </head>
+  <body class="min-h-screen bg-white text-gray-800">
+    <Header />
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+ 
